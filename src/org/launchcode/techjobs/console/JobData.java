@@ -89,24 +89,18 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-            for(Map.Entry<String, String> entry : row.entrySet()) {
+            for (Map.Entry<String, String> entry : row.entrySet()) {
                 String aValue = entry.getValue();
-
-                if (aValue.equals(value)) {
-                    if(!jobs.contains(row)) {
-                        System.out.println(row);
+                if(aValue.contains(value)) {
+                    if (!jobs.contains(row)) {
                         jobs.add(row);
-                    } else {
-                        System.out.println("Already added");
                     }
                 }
 
             }
 
         }
-
         return jobs;
-
 
     }
 
